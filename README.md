@@ -4,14 +4,14 @@
 Git clone and run setup.sh, it pulls awsome vim sets it up and applies my cofig on top of it
 ```
 $ git clone https://github.com/codervikash/config.git
-$ ./config/setup.sh
+$ sh ./config/setup.sh
 ```
 
 ## Updating
 Git pull and run update.sh, it updates awsome vim as well as my cofig file
 ```
 $ git pull origin master
-$ ./update.sh
+$ sh update.sh
 ```
 
 ## Vim Config;
