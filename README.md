@@ -1,21 +1,21 @@
-## My Tmux and Vim config file
+# My Tmux and Vim config file
 
-# Installation
+## Installation
 Git clone and run setup.sh, it pulls awsome vim sets it up and applies my cofig on top of it
 ```
 $ git clone https://github.com/codervikash/config.git
 $ ./config/setup.sh
 ```
 
-# Updating
+## Updating
 Git pull and run update.sh, it updates awsome vim as well as my cofig file
 ```
 $ git pull origin master
 $ ./update.sh
 ```
 
-# Vim Config;
-My vim config is on top of awesome and quite popularvim config by Amir Salihefendic(https://github.com/amix) checkout https://github.com/amix/vimrc. I have added few new plugings on top of it to customize for me.
+## Vim Config;
+My vim config is on top of awesome and quite popularvim config by Amir Salihefendic [https://github.com/amix] checkout https://github.com/amix/vimrc. I have added few new plugings on top of it to customize for me.
 
 Plugins/Features added by me:
 - 'Valloric/YouCompleteMe' - Vim autocomplete
@@ -26,5 +26,5 @@ Plugins/Features added by me:
 - coloriser - see color on top of hex/reg in files
 - 'TaskList.vim' - task list like eclipse
 
-# Tmux Config
+## Tmux Config
 Will update soon.. :-P
