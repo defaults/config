@@ -1,19 +1,5 @@
 # My Tmux and Vim config file
 
-## Installation
-Git clone and run setup.sh, it pulls awsome vim sets it up and applies my cofig on top of it
-```
-$ git clone https://github.com/codervikash/config.git
-$ sh ./config/setup.sh
-```
-
-## Updating
-Git pull and run update.sh, it updates awsome vim as well as my cofig file
-```
-$ git pull origin master
-$ sh update.sh
-```
-
 ## Vim Config;
 My vim config is on top of awesome and quite popularvim config by Amir Salihefendic [https://github.com/amix] checkout https://github.com/amix/vimrc. I have added few new plugings on top of it to customize for me.
 
@@ -27,4 +13,18 @@ Plugins/Features added by me:
 - 'TaskList.vim' - task list like eclipse
 
 ## Tmux Config
-Will update soon.. :-P
+Will update all features and keyword mapping soon.. :-P
+
+## Installation
+Git clone and run setup.sh, it pulls awsome vim sets it up and applies my cofig on top of it
+```
+$ git clone https://github.com/codervikash/config.git
+$ sh ./config/setup.sh
+```
+
+## Updating
+Git pull and run update.sh, it updates awsome vim as well as my cofig file
+```
+$ git pull origin master
+$ sh update.sh
+```
