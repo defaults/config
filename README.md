@@ -1,2 +1,30 @@
-# config
-My config files for vim, tmux etc.
+## My Tmux and Vim config file
+
+# Installation
+Git clone and run setup.sh, it pulls awsome vim sets it up and applies my cofig on top of it
+```
+$ git clone https://github.com/codervikash/config.git
+$ ./config/setup.sh
+```
+
+# Updating
+Git pull and run update.sh, it updates awsome vim as well as my cofig file
+```
+$ git pull origin master
+$ ./update.sh
+```
+
+# Vim Config;
+My vim config is on top of awesome and quite popularvim config by Amir Salihefendic(https://github.com/amix) checkout https://github.com/amix/vimrc. I have added few new plugings on top of it to customize for me.
+
+Plugins/Features added by me:
+- 'Valloric/YouCompleteMe' - Vim autocomplete
+- 'fisadev/vim-ctrlp-cmdpalette' - `<leader>c` to get command palette and fuzzy search it
+- 'airblade/vim-gitgutter' - Git diff inside vim
+- surround.vim - all about surround
+- delimitMate.vim - to add auto closing brackets, quotes etc.
+- coloriser - see color on top of hex/reg in files
+- 'TaskList.vim' - task list like eclipse
+
+# Tmux Config
+Will update soon.. :-P
