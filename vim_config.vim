@@ -74,3 +74,6 @@ let g:gitgutter_realtime = 1
 map <F2> :TaskList<CR>
 
 nmap ,cc <Plug>Colorizer
+
+" open shell sourcing bashrc file
+set shell=bash\ --login
