@@ -1,16 +1,16 @@
 # My Tmux and Vim config file
 
 ## Vim Config;
-My vim config is on top of awesome and quite popularvim config by Amir Salihefendic [https://github.com/amix] checkout https://github.com/amix/vimrc. I have added few new plugings on top of it to customize for me.
+My vim config is on top of awesome and quite popular vim config by Amir Salihefendic [https://github.com/amix] checkout https://github.com/amix/vimrc. I have added few new plugings on top of it to customize for me.
 
 Plugins/Features added by me:
-- 'Valloric/YouCompleteMe' - Vim autocomplete
-- 'fisadev/vim-ctrlp-cmdpalette' - `<leader>c` to get command palette and fuzzy search it
-- 'airblade/vim-gitgutter' - Git diff inside vim
+- Valloric/YouCompleteMe - Vim autocomplete
+- fisadev/vim-ctrlp-cmdpalette - `<leader>c` to get command palette and fuzzy search it
+- airblade/vim-gitgutter - Git diff inside vim
 - surround.vim - all about surround
 - delimitMate.vim - to add auto closing brackets, quotes etc.
 - coloriser - see color on top of hex/reg in files
-- 'TaskList.vim' - task list like eclipse
+- TaskList.vim - task list like eclipse
 
 ## Tmux Config
 Will update all features and keyword mapping soon.. :-P
