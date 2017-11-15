@@ -23,4 +23,10 @@ cd ~/.vim_runtime
 echo "Git pull with rebase - awsome vimrc"
 git pull --rebase
 
+echo "source vimrc file"
+vim vim -c ~/.vimrc
+
+echo "source tmux file"
+tmux source ~/.tmux.conf
+
 echo "Sucessfully updated vim config!"
