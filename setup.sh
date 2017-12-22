@@ -42,8 +42,21 @@ vim vim -c ~/.vimrc
 echo "putting tmux config file to tmux_config.conf"
 cat tmux_config.conf > ~/.tmux.conf
 
+echo "cloning tmux plugin manager"
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 echo "source tmux file"
 tmux source ~/.tmux.conf
+
+echo "installing tmux plugins"
+# start a server but don't attach to it
+tmux start-server
+# create a new session but don't attach to it either
+tmux new-session -d
+# install the plugins
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
+# killing the server is not required, I guess
+tmux kill-server
 
 echo "installing node js"
 echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
