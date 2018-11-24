@@ -29,6 +29,9 @@ Plugin 'colorizer'
 " Tasklist for vim
 Plugin 'TaskList.vim'
 
+" Go vim plugin
+Plugin 'fatih/vim-go'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on
@@ -52,6 +55,9 @@ let g:syntastic_style_warning_symbol = '⚠'
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers=['python']
 
+" customize vim pane divider
+set fillchars+=vert:│
+highlight VertSplit ctermbg=NONE guibg=NONE
 
 " set relative number
 set relativenumber
