@@ -3,12 +3,20 @@ set -e
 
 echo "checking if homebrew present"
 if ! hash brew 2>/dev/null; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.bash_profile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
+echo "installing fira-code font"
+brew install --cask font-fira-code
+
+echo "install startship terminal enhancer"
+curl -sS https://starship.rs/install.sh | sh
 
 echo "checking if wget present, installing if not"
 if ! hash wget 2>/dev/null; then
-    brew install wget --with-libressl
+    brew install wget
 fi
 echo "install source-code pro font"
 brew tap caskroom/fonts && brew cask install font-source-code-pro
@@ -67,18 +75,7 @@ tmux new-session -d
 # killing the server is not required, I guess
 tmux kill-server
 
-echo "installing node js"
-echo 'export PATH=$HOME/local/bin:$PATH' >> ~/.bashrc
-. ~/.bashrc
-mkdir ~/local
-mkdir ~/node-latest-install
-cd ~/node-latest-install
-curl http://nodejs.org/dist/node-latest.tar.gz | tar xz --strip-components=1
-./configure --prefix=~/local
-make install # ok, fine, this step probably takes more than 30 seconds...
-curl https://www.npmjs.org/install.sh | sh
-
-echo "putting bash_profile to~/.bash_profile"
+echo "putting bash_profile to ~/.bash_profile"
 cat bash_profile.conf > ~/.bash_profile
 source ~/.bash_profile
 
