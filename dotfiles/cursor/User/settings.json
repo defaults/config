@@ -1,0 +1,53 @@
+{
+  "go.useLanguageServer": true,
+  "explorer.confirmDelete": false,
+  "workbench.preferredLightColorTheme": "Default Dark+",
+  "workbench.preferredHighContrastColorTheme": "Default Dark+",
+  "jupyter.alwaysTrustNotebooks": true,
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.inheritEnv": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook",
+    "*.svg": "default"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "docker.showStartPage": false,
+  "redhat.telemetry.enabled": false,
+  "editor.fontSize": 14,
+  "git.autofetch": true,
+  "editor.largeFileOptimizations": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "vsicons.dontShowNewVersionMessage": true,
+  "editor.fontVariations": false,
+  "editor.fontFamily": "Cascadia Code, monospace",
+  "editor.fontLigatures": true,
+  "geminicodeassist.enable": true,
+  "notebook.output.textLineLimit": 50,
+  "workbench.iconTheme": "vscode-icons",
+  "files.autoSave": "onWindowChange",
+  "docker.extension.enableComposeLanguageServer": false,
+  "workbench.activityBar.orientation": "vertical",
+  "chatgpt.openOnStartup": true,
+  "chatgpt.cliExecutable": "",
+  "workbench.colorTheme": "Default Dark Modern",
+  "gitlens.launchpad.indicator.enabled": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "geminicodeassist.displayInlineContextHint": false,
+  "window.customTitleBarVisibility": "windowed",
+  "git.ignoreRebaseWarning": true,
+  "githubPullRequests.pullBranch": "never",
+  "window.autoDetectColorScheme": false
+}

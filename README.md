@@ -1,38 +1,109 @@
-# My Tmux and Vim config file
+# Developer Mac Config
 
-Sharing my vim and Tmux config with script to install and update.
+This repo is the portable source of truth for developer settings that should move between Macs.
 
-## Vim Config
-My vim config is on top of awesome and quite popular vim config by Amir Salihefendic [https://github.com/amix] checkout https://github.com/amix/vimrc. I have added few new plugings on top of it to customize for me.
+Use Git for this instead of a one-time folder copy. The files live in different places on macOS, but the scripts map those places into one repo layout and back again. That gives you repeatable setup for a new Mac and ongoing sync between machines.
 
-Plugins/Features added by me:
-- Valloric/YouCompleteMe - Vim autocomplete
-- fisadev/vim-ctrlp-cmdpalette - `<leader>c` to get command palette and fuzzy search it
-- airblade/vim-gitgutter - Git diff inside vim
-- surround.vim - all about surround
-- delimitMate.vim - to add auto closing brackets, quotes etc.
-- coloriser - see color on top of hex/reg in files
-- TaskList.vim - task list like eclipse
+## What Is Tracked
 
-## Tmux Config
-Will update all features and keyword mapping soon.. :-P
+- Shell: `dotfiles/zsh/zshrc -> ~/.zshrc`, `dotfiles/zsh/zprofile -> ~/.zprofile`, `dotfiles/shell/profile -> ~/.profile`, `~/.config/zsh/aliases`
+- Terminal/editor tools: Oh My Zsh dependency, nvm dependency, tmux, standalone Vim config, asdf `.tool-versions`
+- Homebrew: `dotfiles/homebrew/Brewfile`
+- Git: `dotfiles/git/gitconfig -> ~/.gitconfig`, optional `dotfiles/git/gitignore_global -> ~/.gitignore_global`
+- SSH: `~/.ssh/config` only
+- Cursor: sanitized user `settings.json`, `keybindings.json`, snippets, and extension list
+- Ghostty: terminal config
+- Raycast: extension inventory only, for manual reinstall/reference
 
-## Installation
-Git clone and run setup.sh, it pulls awsome vim sets it up and applies my cofig on top of it
+## What Is Not Tracked
+
+These are intentionally excluded because they are secret, large, or machine-specific:
+
+- SSH private keys, `known_hosts`, and generated agent sockets
+- `~/.config/gcloud`, GitHub `hosts.yml`, 1Password, Docker, Kubernetes, and other token stores
+- Docker config/state, including `~/.docker/config.json`, contexts, buildx state, and app settings
+- Raycast installed extension bundles, app database, AI history, preferences, and account/login state
+- Cursor CLI config, agent permission state, `globalStorage`, `workspaceStorage`, history, logs, extension binaries, MCP caches, and full project caches
+- Full `~/.oh-my-zsh` and `~/.nvm` checkouts, generated shell caches, and installed Node versions
+- Old `~/.vim_runtime`; the repo now carries a standalone Vim config instead
+- App caches and login sessions
+
+Move secrets through 1Password, cloud provider login flows, SSH key generation/import, or each tool's official migration flow.
+
+## Export From This Mac
+
+Run this whenever the current Mac has the settings you want to preserve:
+
+```sh
+./import_configs.sh
+git diff --stat
+git diff
+git add .
+git commit -m "Update developer Mac config"
+git push
 ```
-$ git clone https://github.com/codervikash/config.git
-$ sh ./config/setup.sh
+
+The export script does not commit or push automatically.
+
+## Restore On A New Mac
+
+Clone the repo, inspect what would change, then restore:
+
+```sh
+git clone git@github.com:codervikash/config.git ~/Life/config
+cd ~/Life/config
+./restore.config.sh --dry-run
+./restore.config.sh
 ```
 
-## Updating
-Git pull and run update.sh, it updates awsome vim as well as my cofig file
-```
-$ git pull origin master
-$ sh update.sh
+The restore script backs up replaced files under:
+
+```text
+~/.config-restore-backups/<timestamp>/
 ```
 
-## Contributing:
-Your contributions are always welcome, please fork thhe repo and send a PR. TO file bug raise a issue or directly contact me on my [mail](mailto:mailkumarvikash@gmail.com) or reach on twitter [@codervikash](https://twitter.com/codervikash)
+Useful variants:
 
-## Licence
-MIT
+```sh
+./restore.config.sh --no-brew
+./restore.config.sh --no-cursor-extensions
+./restore.config.sh --only bash
+./restore.config.sh --only zsh,git
+./restore.config.sh --only cursor --no-cursor-extensions
+```
+
+Both import and restore support partial categories:
+
+```sh
+./import_configs.sh --list
+./restore.config.sh --list
+./import_configs.sh --only vim
+./restore.config.sh --only vim
+```
+
+Available categories are `homebrew`, `zsh`, `bash`, `shell`, `tmux`, `vim`, `git`, `asdf`, `ssh`, `cursor`, `ghostty`; import also supports `raycast`.
+
+## New Mac Checklist
+
+1. Install Xcode Command Line Tools: `xcode-select --install`
+2. Sign in to 1Password and enable the SSH agent if Git commit signing or GitHub SSH depends on it.
+3. Clone this repo and run `./restore.config.sh --dry-run`.
+4. Run `./restore.config.sh`.
+5. Sign in again to tools that should not be copied: GitHub CLI, Google Cloud, Docker, Cursor, npm, Kubernetes, and cloud provider CLIs.
+6. Open Cursor and verify Settings Sync is either disabled or intentionally aligned with this repo.
+7. Clone active projects separately under `~/Life` or your preferred workspace path.
+8. Open Raycast and use Raycast Sync/export for full state if you want it; use `dotfiles/raycast/extensions.txt` only as a lightweight reference.
+9. Open Docker Desktop or OrbStack and recreate machine-specific contexts/login state manually.
+10. Install project-specific Node versions with `nvm install` as needed.
+
+## Notes
+
+Cursor project state is not portable and is intentionally not tracked. Clone/open projects separately on each Mac.
+
+Cursor settings are sanitized on export to remove machine-specific Kubernetes tool paths and project-specific Gemini state.
+
+Managed home dotfiles use visible names inside the repo, then restore to hidden names on the target Mac. Example: `dotfiles/zsh/zshrc` restores to `~/.zshrc`.
+
+Restore is idempotent: it installs prerequisites first, skips unchanged files, backs up only files it actually changes, and prints restart/reopen notes for tools that need it.
+
+Keep this repo boring. Add files only when they are plain text, portable, reproducible, and safe to publish to a private Git repo. Prefer app-native sync/manual login for anything with tokens, caches, databases, machine IDs, or large generated state.

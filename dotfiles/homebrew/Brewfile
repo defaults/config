@@ -1,0 +1,45 @@
+tap "hashicorp/tap"
+# Extendable version manager with support for Ruby, Node.js, Erlang & more
+brew "asdf"
+# Get/set bluetooth power and discoverable state
+brew "blueutil"
+# Mozilla CA certificate store
+brew "ca-certificates"
+# YAML Parser
+brew "libyaml"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Dependency manager for Cocoa projects
+brew "cocoapods"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
+# Monitor a directory for changes and run a shell command
+brew "fswatch"
+# GitHub command-line tool
+brew "gh"
+# Library for command-line editing
+brew "readline"
+# Install and debug iPhone apps from the command-line
+brew "ios-deploy"
+# Deep clean and optimize your Mac
+brew "mole"
+# Python version management
+brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Image processing library
+brew "vips"
+# Watch files and take action when they change
+brew "watchman"
+# Terraform
+brew "hashicorp/tap/terraform"
+# Command-line interface for 1Password
+cask "1password-cli"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
+# JDK from the Eclipse Foundation (Adoptium)
+cask "temurin@17"
+go "golang.org/x/tools/gopls"
+go "honnef.co/go/tools/cmd/staticcheck"
+npm "@openai/codex"
+npm "corepack"

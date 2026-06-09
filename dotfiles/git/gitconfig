@@ -1,0 +1,20 @@
+# This is Git's per-user configuration file.
+[user]
+	name = Vikash Kumar
+	email = mailkumarvikash@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF3V2ubxk+kENduuEefJcaq6kGDf13SUvyBNmzY+PTxD
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	ci = commit
+	lg = log --oneline --graph --decorate --all
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+	gpgsign = true

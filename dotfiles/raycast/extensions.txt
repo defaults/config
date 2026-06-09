@@ -1,0 +1,16 @@
+1password	1Password
+arc	Arc
+brew	Brew
+color-picker	Color Picker
+gif-search	GIF Search
+json-format	Format JSON
+kill-process	Kill Process
+music	Music
+obsidian	Obsidian
+pomodoro	Pomodoro
+raycast-gemini	Google Gemini
+raycast-system-monitor	System Monitor
+shell	Shell
+speedtest	Speedtest
+spotify-controls	Spotify Controls
+spotify-player	Spotify Player

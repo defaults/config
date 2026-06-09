@@ -1,0 +1,18 @@
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    Plug 'junegunn/fzf.vim'
+    Plug 'preservim/nerdtree'
+    Plug 'preservim/nerdcommenter'
+    Plug 'majutsushi/tagbar'
+    Plug 'jlanzarotta/bufexplorer'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-surround'
+    Plug 'mhinz/vim-signify'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+    Plug 'hashivim/vim-terraform'
+    Plug 'pangloss/vim-javascript'
+    Plug 'mxw/vim-jsx'
+    Plug 'plasticboy/vim-markdown'
+    Plug 'morhetz/gruvbox'
+    Plug 'drewtempelmeyer/palenight.vim'

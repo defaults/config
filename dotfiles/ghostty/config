@@ -1,0 +1,55 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /Users/vikashkumar/Library/Application Support/com.mitchellh.ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# font, icon, background
+# =======================
+# font-family = Iosevka
+window-padding-x = 2
+background = #1e1e1e
+scrollback-limit = 50000
+
+resize-overlay-duration = 4s 200ms
+macos-icon=xray
+cursor-style = block
+cursor-style-blink = false
+shell-integration-features = no-cursor
+
+# split and move
+# ===============
+# Move to the split on the right with Cmd + Right Arrow
+keybind = super+right=goto_split:right
+
+# Create a new split to the right with Cmd + ` + Right Arrow
+keybind = super+`>right=new_split:right
+
+# Move to the split on the left with Cmd + Left Arrow
+keybind = super+left=goto_split:left
+
+# Create a new split to the left with Cmd + ` + Left Arrow
+keybind = super+`>left=new_split:left
+
+# Move to the split above with Cmd + Up Arrow
+keybind = super+up=goto_split:up
+
+# Create a new split above with Cmd + ` + Up Arrow
+keybind = super+`>up=new_split:up
+
+# Move to the split below with Cmd + Down Arrow
+keybind = super+down=goto_split:down
+
+# Create a new split below with Cmd + ` + Down Arrow
+keybind = super+`>down=new_split:down

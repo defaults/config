@@ -1,0 +1,20 @@
+.DS_Store
+*.bak
+*.backup
+*.swp
+*.tmp
+
+# Never commit local secrets or machine caches.
+dotfiles/**/id_*
+dotfiles/**/known_hosts*
+dotfiles/**/credentials*
+dotfiles/**/access_tokens*
+dotfiles/**/hosts.yml
+dotfiles/**/mcp.json
+dotfiles/**/workspaceStorage/
+dotfiles/**/globalStorage/
+dotfiles/**/History/
+dotfiles/**/logs/
+dotfiles/docker/
+dotfiles/raycast/extensions/*/
+dotfiles/cursor/argv.json
